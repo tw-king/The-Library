@@ -1,0 +1,100 @@
+h1 {
+	font-family: 'Permanent Marker', "Comic Sans MS", cursive, sans-serif;
+	font-size: 4vw;
+	text-align: center;
+}
+h2 {
+	font-family: 'Permanent Marker', "Comic Sans MS", cursive, sans-serif;
+	font-size: 3vw;
+}
+h3 {
+	font-family: 'Permanent Marker', "Comic Sans MS", cursive, sans-serif;
+	font-size: 2.5vw;
+	margin
+}
+body {
+	font-family: 'Indie Flower', cursive, "Comic Sans MS", cursive, sans-serif;
+	font-size: 1.75vw;
+}
+
+hr { border-color: grey; }
+
+.f_left {
+	float:left;
+}
+
+.f_right {
+	float:right;
+}
+
+.red {
+	color: red;
+}
+
+.rowSpacingAbove {
+	margin-top: 10px;
+}
+
+.rowSpacing {
+	margin-bottom: 10px;
+}
+
+.libAdmin {
+	margin: 50px auto;
+	width: 80%;
+}
+
+.libAdminForm {
+	padding: 15px;
+}
+
+.books_hdr {
+	min-width: 160px; max-width: 100%;
+}
+
+.genreGroup {
+	border-top: 2px solid grey;
+	border-left: 3px solid grey;
+	border-right: 3px solid grey;
+	border-bottom: 1px solid grey;
+}
+
+.libSearch {
+	margin-top: 10px;
+	border-radius: 8px;
+	border: 2px dotted #9c27b0 !important;
+	width: 100%;
+	padding: 0px 15px; 
+}
+
+.libNav {
+	margin-top: 5px;
+}
+
+.libSearch:focus {
+	outline: none !important;
+	border: 3px dashed #9c27b0 !important;
+}
+
+.libBtn {
+	font-family: 'Indie Flower', cursive, "Comic Sans MS", cursive, sans-serif;
+	font-size: 1vw;
+}
+
+.libTool {
+	padding: 1.5px 6px !important;
+}
+
+.libBtnLg {
+	font-family: 'Indie Flower', cursive, "Comic Sans MS", cursive, sans-serif;
+	font-size: 2vw;
+}
+
+.libUser {
+	padding: 8px 16px;
+}
+
+.blockLabel {
+	display: block;
+	margin: 10px 0px;
+}
