@@ -2,8 +2,12 @@
 	<a href="{{ route('admin.index') }}" class="w3-bar-item {{ Route::currentRouteName() == 'admin.index' ? 'w3-green' : '' }} w3-button">Books</a>
 	<a href="{{ route('admin.author.index') }}" class="w3-bar-item {{ Route::currentRouteName() == 'admin.author.index' ? 'w3-green' : '' }} w3-button">Authors</a>
 	<a href="{{ route('admin.genre.index') }}" class="w3-bar-item {{ Route::currentRouteName() == 'admin.genre.index' ? 'w3-green' : '' }} w3-button">Genres</a>
+	<!--
 	<a href="{{ route('admin.language.index') }}" class="w3-bar-item {{ Route::currentRouteName() == 'admin.language.index' ? 'w3-green' : '' }} w3-button">Languages</a>
+	-->
+	@if(Auth::user()->is_admin)
 	<a href="{{ route('admin.user.index') }}" class="w3-bar-item {{ Route::currentRouteName() == 'admin.user.index' ? 'w3-green' : '' }} w3-button">Users</a>
+	@endif
 	<a href="{{ route('books.index') }}" class="w3-bar-item w3-button">Library</a>
 
 	@if(!Auth::check())

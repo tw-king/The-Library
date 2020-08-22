@@ -110,6 +110,9 @@ class BooksController extends Controller
         $book->synopsis = $request->input('synopsis');
         $book->save();
 
+        // Update genres pivot table
+        $book->genres()->attach($request->input('genres') === null ? [] : $request->input('genres'));
+
         return redirect()->route('admin.index')->with('info', 'Book added!');
     }
 
@@ -134,6 +137,9 @@ class BooksController extends Controller
         $book->pubyear = $request->input('pubyear');
         $book->save();
 
+        // Update genres pivot table
+        $book->genres()->sync($request->input('genres') === null ? [] : $request->input('genres'));
+
         return redirect()->route('admin.index')->with('info', 'Book updated!');
     }
 
@@ -146,6 +152,7 @@ class BooksController extends Controller
         $book = Book::find($request->input('book_id'));
         if ($book['loaned_to_user_id'] == -1) {
             $book->delete();
+            $book->genres()->detach();  // Delete genre links
             $infoMsg = 'Book deleted!';
         }
 

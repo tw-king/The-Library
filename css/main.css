@@ -98,3 +98,12 @@ hr { border-color: grey; }
 	display: block;
 	margin: 10px 0px;
 }
+
+.genresSelect {
+	margin-left: 10%;
+	font-size: 1.25vw;
+}
+
+small.genresSelect {
+	font-size: 1vw;
+}

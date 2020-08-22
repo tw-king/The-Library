@@ -43,10 +43,19 @@
 			    				<input class="w3-input" name="isbn" type="text" placeholder="ISBN 10 or 13 digits">
 			    			</div>
 					    </div>
-					    <div class="w3-row rowSpacing">
-			    			<div class="w3-col s12">
+					    <div class="w3-row">
+			    			<div class="w3-col s9">
 				    			<textarea class="w3-input" name="synopsis" placeholder="Synopsis*" rows="3"></textarea>
 						    </div>
+			    			<div class="w3-col s3">
+			    		        <select class="genresSelect" name="genres[]" multiple size="5">
+						        	<option disabled selected>Select genres...</option>
+							        @foreach($genres as $genre)
+							        <option value="{{ $genre['id'] }}">{{ $genre['genre'] }}</option>
+							        @endforeach
+					        	</select><br>
+					        	<small class="genresSelect">Use CTRL key</small>
+			    			</div>
 					    </div>
 					    <div class="w3-row rowSpacing">
 			    			<div class="w3-col s2 m3">
@@ -60,8 +69,8 @@
 			    	<footer class="w3-container w3-green">
 			    		<p>
 			    			{{ csrf_field() }}
-				    		<input class="w3-btn w3-round-xlarge w3-large w3-white" type="submit" value="Save" /><br>
-				    		<small>* Required input</small>
+				    		<input class="w3-btn w3-round-xlarge w3-large w3-white" type="submit" value="Save" />
+				    		<small class="f_right">* Required input</small>
 				    	</p>
 			      	</footer>
 				</form>
@@ -102,7 +111,7 @@
 			    			<form name="edit_{{ $book['id'] }}" method="post" action="{{ route('admin.editBook') }}">
 						    	<div class="w3-container">
 						    		<div class="w3-row rowSpacing rowSpacingAbove">
-					    				<input class="w3-input" type="text" name="title" required placeholder="Title" value="{{ $book['title'] }}">
+					    				<input class="w3-input" type="text" name="title" required placeholder="Title*" value="{{ $book['title'] }}">
 						    		</div>
 						    		<div class="w3-row rowSpacing">
 						    			<div class="w3-col s4">
@@ -117,10 +126,19 @@
 						    				<input class="w3-input" name="isbn" type="text" placeholder="ISBN 10 or 13 digits" value="{{ $book['isbn'] }}">
 						    			</div>
 								    </div>
-								    <div class="w3-row rowSpacing">
-						    			<div class="w3-col s12">
-							    			<textarea class="w3-input" name="synopsis" placeholder="Synopsis" rows="3">{{ $book['synopsis'] }}</textarea>
+								    <div class="w3-row">
+						    			<div class="w3-col s9">
+							    			<textarea class="w3-input" name="synopsis" placeholder="Synopsis*" rows="3">{{ $book['synopsis'] }}</textarea>
 									    </div>
+						    			<div class="w3-col s3">
+						    		        <select class="genresSelect" name="genres[]" multiple size="5" title="">
+									        	<option disabled selected>Select genres...</option>
+										        @foreach($genres as $genre)
+										        <option value="{{ $genre['id'] }}" {{ $book->genres->contains($genre->id) ? 'selected' : '' }}>{{ $genre['genre'] }}</option>
+										        @endforeach
+								        	</select><br>
+								        	<small class="genresSelect">Use CTRL key</small>
+						    			</div>
 								    </div>
 								    <div class="w3-row rowSpacing">
 						    			<div class="w3-col s2 m3">
@@ -136,6 +154,7 @@
 						    			<input type="hidden" name="book_id" value="{{ $book['id'] }}">
 						    			{{ csrf_field() }}
 							    		<input class="w3-btn w3-round-xlarge w3-large w3-white" type="submit" value="Save" />
+							    		<small class="f_right">* Required input</small>
 							    	</p>
 						      	</footer>
 							</form>
