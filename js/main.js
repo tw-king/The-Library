@@ -1,3 +1,8 @@
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-117249412-1');
+
 function showHide(id) {
 	let e = document.getElementById(id);
 	let s = document.getElementById(id+'CTRL');

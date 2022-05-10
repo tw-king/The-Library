@@ -15,8 +15,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Permanent Marker' rel='stylesheet'>
 		<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117249412-1"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1M339YFFNB"></script>
     </head>
     <body>
         @include('components.header')
